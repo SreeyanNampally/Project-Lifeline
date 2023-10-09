@@ -6,7 +6,11 @@ function setup() {
   canvas.center();
   video = createCapture(VIDEO);
   video.hide();
+  facingMode: {
+    exact: "environment"
+  }
   classifier = ml5.imageClassifier("https://teachablemachine.withgoogle.com/models/R3rBWMPIl/model.json", modelloaded);
+
 }
 
 function modelloaded(){
@@ -15,7 +19,7 @@ function modelloaded(){
 
 
 function draw(){
- image(video, 0,0, 300, 300);
+ image(video, 0,0, 400, 300);
  classifier.classify(video, gotResult);
 }
 
@@ -43,21 +47,14 @@ function gotResult(error, results){
 var sentence = [];
 
 function printDaArray() {
-  console.log(previous_result);
-  //document.getElementById("textarea1").innerHTML = previous_result;
-  sentence = sentence.concat(previous_result);
-  document.getElementById("textarea1").innerHTML = sentence.join("");
+    console.log(previous_result);
+    sentence = sentence.concat(previous_result);
+    document.getElementById("textarea1").innerHTML = sentence.join("");
 }
 
-printDaArray()
 
 let startTimer = setInterval(printDaArray, 2000);
-
-// setTimeout(() => {
-//   arr.push(results[0].label);
-//   console.log("you're 2 idiots")
-// }, 2000);
-
+printDaArray()
 
 
 
