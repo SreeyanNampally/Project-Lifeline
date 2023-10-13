@@ -6,9 +6,6 @@ function setup() {
   canvas.center();
   video = createCapture(VIDEO);
   video.hide();
-  facingMode: {
-    exact: "environment"
-  }
   classifier = ml5.imageClassifier("https://teachablemachine.withgoogle.com/models/R3rBWMPIl/model.json", modelloaded);
 
 }
@@ -44,20 +41,19 @@ function gotResult(error, results){
   }
 }
 
+acc_result = previous_result
+
 var sentence = [];
 
 function printDaArray() {
     console.log(previous_result);
     sentence = sentence.concat(previous_result);
     document.getElementById("textarea1").innerHTML = sentence.join("");
+  
 }
 
 
 let startTimer = setInterval(printDaArray, 2000);
 printDaArray()
-
-
-
-
 
 
