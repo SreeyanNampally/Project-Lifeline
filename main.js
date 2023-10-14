@@ -63,25 +63,24 @@ printDaArray()
 
 function switchcam(){
   switchFlag = !switchFlag;
-  if(switchFlag = true){
-    VIDEO = {
-      video: {
-        facingMode: {
-         exact: "environment"
-       }
-    }
-  };
-    switchFlag = !switchFlag;
-  }
-  else{
-    VIDEO = {
-      video: {
-          facingMode: {
-           exact: "user"
-         }
+      if(switchFlag = true){
+        VIDEO = {
+          video: {
+            facingMode: {
+            exact: "environment"
+          }
+        }
+      };
       }
-    };
-  }
+      else{
+        VIDEO = {
+          video: {
+              facingMode: {
+              exact: "user"
+            }
+          }
+        };
+      }
   capture = createCapture(VIDEO);
   video.hide();
 }
