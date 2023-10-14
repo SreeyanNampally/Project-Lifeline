@@ -2,7 +2,7 @@ arr = [];
 
 
 function setup() {
-  canvas = createCanvas(300, 300);
+  canvas = createCanvas(300, 400);
   canvas.center();
   video = createCapture(VIDEO);
   video.hide();
@@ -19,7 +19,7 @@ function modelloaded(){
 
 
 function draw(){
- image(video, 0,0, 300, 300);
+ image(video, 0,0, 300, 400);
  classifier.classify(video, gotResult);
 }
 
