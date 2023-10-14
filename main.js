@@ -2,13 +2,13 @@ arr = [];
 
 
 function setup() {
-  canvas = createCanvas(300, 400);
+  canvas = createCanvas(300, 300);
   canvas.center();
   video = createCapture(VIDEO);
   video.hide();
-  facingMode: {
-    exact: "environment"
-  }
+  switchBtn = createButton('Switch Camera');
+  switchBtn.position(19, 19);
+  switchBtn.mousePressed(switchCamera);
   classifier = ml5.imageClassifier("https://teachablemachine.withgoogle.com/models/R3rBWMPIl/model.json", modelloaded);
 
 }
@@ -19,7 +19,7 @@ function modelloaded(){
 
 
 function draw(){
- image(video, 0,0, 300, 400);
+ image(video, 0,0, 300, 300);
  classifier.classify(video, gotResult);
 }
 
@@ -60,3 +60,31 @@ let startTimer = setInterval(printDaArray, 2000);
 printDaArray()
 
 
+function switchCamera()
+{
+  switchFlag = !switchFlag;
+  stopCapture();
+  if(switchFlag==true)
+  {
+   capture.remove();
+   options = {
+     video: {
+         facingMode: {
+          exact: "environment"
+        }
+     }
+   };
+
+  }
+  else
+  {
+   capture.remove();
+   options = {
+     video: {
+         facingMode: {
+          exact: "user"
+        }
+     }
+   };
+  }
+}
