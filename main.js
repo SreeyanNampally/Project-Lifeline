@@ -63,7 +63,7 @@ printDaArray()
 
 function switchcam(){
   switchFlag = !switchFlag;
-  if(switchFlag = false){
+  if(switchFlag = true){
     VIDEO = {
       video: {
         facingMode: {
@@ -71,6 +71,7 @@ function switchcam(){
        }
     }
   };
+    switchFlag = !switchFlag;
   }
   else{
     VIDEO = {
@@ -82,5 +83,6 @@ function switchcam(){
     };
   }
   capture = createCapture(VIDEO);
+  video.hide();
 }
 
