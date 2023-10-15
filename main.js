@@ -81,7 +81,8 @@ function switchcam(){
           }
         };
       }
-  capture = createCapture(VIDEO);
-  video.hide();
+      setup();
+  //capture = createCapture(VIDEO);
+  //video.hide();
 }
 
