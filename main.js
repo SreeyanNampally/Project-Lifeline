@@ -62,7 +62,7 @@ printDaArray()
 
 
 function switchcam(){
-  switchFlag = !switchFlag;
+  let switchFlag = !switchFlag;
       if(switchFlag = true){
         VIDEO = {
           video: {
