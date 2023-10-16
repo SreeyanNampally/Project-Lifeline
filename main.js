@@ -62,8 +62,8 @@ printDaArray()
 
 
 function switchcam(){
-  let switchFlag = !switchFlag;
-      if(switchFlag = true){
+    switchFlag = !switchFlag;
+      if(switchFlag == true){
         VIDEO = {
           video: {
             facingMode: {
