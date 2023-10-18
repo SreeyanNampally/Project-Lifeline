@@ -34,10 +34,10 @@ function gotResult(error, results){
     if ((results[0].confidence>0.5)&& previous_result != results[0].label) {
       console.log(results);
       previous_result = results[0].label;
-      synth = window.speechSynthesis
+      //synth = window.speechSynthesis
       speakdata = "object detected is " + results[0].label;
-      utterthis = new SpeechSynthesisUtterance(speakdata);
-      synth.speak(utterthis);
+      //utterthis = new SpeechSynthesisUtterance(speakdata);
+      //synth.speak(utterthis);
       document.getElementById("result_object_name").innerHTML = results[0].label;
       document.getElementById("result_object_accuracy").innerHTML = (results[0].confidence*100).toFixed(2);
       
