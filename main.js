@@ -12,7 +12,7 @@ function setup() {
      canvas.center();
      video = createCapture(VIDEO);
      video.hide();
-     classifier = ml5.imageClassifier("https://teachablemachine.withgoogle.com/models/Xl7G8tVfS/", modelloaded);
+     classifier = ml5.imageClassifier("https://teachablemachine.withgoogle.com/models/Xl7G8tVfS/model.json", modelloaded);
 
 }
 
@@ -54,7 +54,7 @@ var sentence = [];
 
 function printDaArray() {
      console.log(previous_result);
-     sentence = sentence.concat(previous_result);
+     sentence = sentence.concat(previous_result+" ");
      document.getElementById("textarea1").innerHTML = sentence.join("");
 
 }
