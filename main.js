@@ -51,10 +51,6 @@ function gotResult(error, results) {
 acc_result = previous_result
 
 var sentence = [];
-var index = sentence.indexOf("_");
-if (index > -1) {
-     sentence.splice(index, 1);
-}
 
 
 function printSentence() {
