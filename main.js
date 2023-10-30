@@ -51,14 +51,18 @@ function gotResult(error, results) {
 acc_result = previous_result
 
 var sentence = [];
+const index = sentence.indexOf("_");
+
 
 
 function printSentence() {
      console.log(previous_result);
-     sentence = sentence.concat(previous_result+" ");
+     sentence = sentence.concat(previous_result);
      document.getElementById("textarea1").innerHTML = sentence.join("");
+     if (index > -1) {
+          sentence.splice(index, 1);
+     }
 }
-
 
 let startTimer = setInterval(printSentence, 3500);
 printSentence()
@@ -88,4 +92,6 @@ function switchcam() {
      //video.hide();
 }
 
-
+function cleartext() {
+     document.getElementById("textarea1").innerHTML = "";
+}

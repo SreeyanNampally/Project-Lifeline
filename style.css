@@ -64,3 +64,8 @@ textarea {
 #btnswitch {
      margin-bottom: 50px;
 }
+
+#btnclear:hover {
+     background-color:#306494;
+     transition: 0s;
+ }
